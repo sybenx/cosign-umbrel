@@ -11,7 +11,9 @@ services:
     user: "1000:1000"
     restart: on-failure
     environment:
-      COSIGN_PERSONAL: "0"
+      # Your own key on first start, made with your phone: phone 3 shares, this server 1,
+      # any 4 sign. Its page shows "Add your phone" until the phone pairs.
+      COSIGN_PERSONAL: weighted
       COSIGN_ENROLL: invite
       COSIGN_RELAYS: wss://syb.lol,wss://nos.lol,wss://relay.primal.net
     volumes:
