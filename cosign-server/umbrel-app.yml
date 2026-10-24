@@ -1,0 +1,49 @@
+manifestVersion: 1
+id: cosign-server
+category: social
+name: Cosign Server
+version: "0.11.1"
+tagline: Your own always-on co-signer for your Nostr key
+description: >-
+  Cosign splits your Nostr key into pieces, so no single device or server ever holds it.
+  Your phone holds a big piece, servers hold small ones, and a device plus any one server
+  signs. This app is a Cosign server on your Umbrel: one you run yourself, which the
+  Cosign app asks first, so public servers see less of what you sign.
+
+
+  It connects out to public Nostr relays, so it needs no open port and works wherever
+  your phone is. Its page, behind your Umbrel login, lists the accounts it serves.
+
+
+  It's private: only your own devices use it. Open its page and scan "Add your phone"
+  with the Cosign app. Set your npub as its operator in the app's settings, so the
+  Cosign app can count it as yours.
+releaseNotes: ""
+developer: sybenx
+website: https://cosign.aaro.cc
+dependencies: []
+repo: https://github.com/sybenx/cosign
+support: https://github.com/sybenx/cosign/issues
+port: 8711
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: sybenx
+submission: https://github.com/sybenx/cosign-umbrel
+# Shares must be gone for good after a refresh, so no backup may keep one. A server that
+# loses its shares is fine: your device and another server still sign.
+backupIgnore:
+  - data/groups/*
+environment:
+  - name: COSIGN_OPERATOR
+    services: [server]
+    note: Your npub. With it, the server announces itself (kind 30243) naming you, so the Cosign app can count it as yours. Then name it back from your key (kind 10243).
+  - name: COSIGN_ENROLL
+    services: [server]
+    default: invite
+    options: [invite, open]
+    note: invite keeps it yours. open lets strangers store pieces of their keys on your home network, and it connects out from your home IP. A public server belongs on a VPS, with its outbound connections limited.
+  - name: COSIGN_INVITES
+    services: [server]
+    note: With invite, the device pubkeys (hex, comma separated) that may enroll.

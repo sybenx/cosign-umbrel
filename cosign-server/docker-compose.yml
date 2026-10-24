@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: cosign-server_server_1
+      APP_PORT: 8711
+
+  server:
+    image: ghcr.io/sybenx/cosign-server:0.11.1@sha256:50fcec6d8db05fb81e0aff028695c9b35244c2f1c3090b8d2fbd163a1920727e
+    user: "1000:1000"
+    restart: on-failure
+    environment:
+      COSIGN_PERSONAL: "0"
+      COSIGN_ENROLL: invite
+      COSIGN_RELAYS: wss://syb.lol,wss://nos.lol,wss://relay.primal.net
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
