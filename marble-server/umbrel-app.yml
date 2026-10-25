@@ -23,7 +23,7 @@ category: social
 name: Marble Server
 version: "0.12.2"
 tagline: Your own always-on co-signer for your Nostr account
-icon: https://raw.githubusercontent.com/sybenx/cosign-umbrel/main/assets/icon.png
+icon: https://raw.githubusercontent.com/sybenx/cosign-umbrel/main/assets/marble-tile.png
 description: >-
   Marble keeps your Nostr account without your key sitting in any one place. Your phone
   holds 3 shares of your key, each server 1, and it takes 4 to sign: your phone plus any
