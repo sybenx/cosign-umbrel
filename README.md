@@ -13,12 +13,14 @@ needs no open port.
 
 1. In umbrelOS: App Store, ⋯ (top right), **Community App Stores**, add
    `https://github.com/sybenx/cosign-umbrel`.
-2. Install **Marble Server**.
+2. Install **Marble Server** and open it.
+3. In the Marble app: your picture, **Add a server**, and scan **Add this server to your
+   account** on the server's page. The code works once, on this server only, for an
+   hour; the page makes a new one when it's used or expired.
 
-**Coming soon: add this server to your Marble account.** Marble's *Add a server* will
-scan a code on the server's page. Until then the server runs and waits, and holds
-nothing: it doesn't make an account of its own, because an account with only this one
-server couldn't be recovered from its paper backup.
+The server makes no account of its own: one made with only this server couldn't be
+recovered from its paper backup. Marble can't take a server out of your account yet, so a
+server you add stays in it until that comes.
 
 ## Settings
 
@@ -26,7 +28,7 @@ server couldn't be recovered from its paper backup.
 | --- | --- | --- |
 | `COSIGN_OPERATOR` | none | your npub |
 | `COSIGN_ENROLL` | `invite` | `invite` keeps it yours. `open` lets strangers store pieces of their keys on your home network, and it connects out from your home IP: a public server belongs on a VPS, with its outbound connections limited ([relay sidecars](https://github.com/sybenx/cosign/tree/main/deploy)). |
-| `COSIGN_INVITES` | none | with `invite`, other devices' pubkeys (hex, comma separated) that may enroll a new account here |
+| `COSIGN_INVITES` | none | with `invite`, other devices' pubkeys (hex, comma separated) that may enroll without a code |
 
 ## Good to know
 

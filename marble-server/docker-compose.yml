@@ -7,15 +7,15 @@ services:
       APP_PORT: 8711
 
   server:
-    image: ghcr.io/sybenx/cosign-server:0.12.2@sha256:eb057185212034c5f29da4faf47435352db58b40bc8a87a78fd2eba785a7b5e7
+    image: ghcr.io/sybenx/cosign-server:0.12.3@sha256:a8c82f46ea84919c511f7f2c82a1a9804b407c951d40d773d50b80dbbf843d9f
     user: "1000:1000"
     restart: on-failure
     read_only: true
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
     environment:
-      # No account of its own: one made with your phone would have only this server. It
-      # waits until Marble can add it to your account (coming soon).
+      # No account of its own (one made with your phone would have only this server): your
+      # existing Marble account adds it with the code on its page.
       COSIGN_PERSONAL: "0"
       COSIGN_ENROLL: invite
       COSIGN_RELAYS: wss://syb.lol,wss://nos.lol,wss://relay.primal.net

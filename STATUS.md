@@ -27,22 +27,16 @@
   card, a new account after a restore), then take the screenshots.
 - The official package drops `icon:` and sets `submission:` to the PR's URL.
 
-## Next: the new join modes (waiting on the Cosign server)
+## 0.12.3: Add this server to your account (25 Oct 2026)
 
-The agreed design. Marble Server serves **only me** (the default), **people I follow**
-(optionally follows-of-follows), **people I invite**, or **anyone**. Its main flow is
-"Add this server to your Marble account": Marble's Add a server scans the page's code.
-It no longer creates a new account. When the Cosign server ships it:
+Pinned to the 0.12.3 multi-arch index (amd64 + arm64). The page shows "Add this server to
+your account", a one-time code that Marble 0.12.3's Add a server scans: it works once, on
+this server only, for an hour. Checked locally on the pinned image (read-only, no
+network): no account of its own, the card and code on the page, the same unused code on
+reload. Not yet: the phone test on the Umbrel with the new flow, and screenshots.
 
-- re-pin the image;
-- map the app's settings to the join mode (default "only me"), and drop the raw
-  COSIGN_ENROLL / COSIGN_INVITES settings for whatever the server takes;
-- add "or share it with people you follow" to the description;
-- retest on the Umbrel, then the phone test with the new flow, then screenshots;
-- then the official PR, still unopened.
+## Later: join modes
 
-Until then the app makes no account of its own (`COSIGN_PERSONAL=0`): it runs and waits,
-holding nothing, and the listing says "Coming soon: add this server to your Marble
-account". The page shows the server's own status and an empty list. The test Umbrel
-installed before this change still has its own 1-server account from "Add your phone":
-use it only with a throwaway account.
+Only me (the default) / people I follow / people I invite / anyone: the page says it's
+coming. When the server takes it, map the app's settings to it and add "or share it with
+people you follow" to the description.

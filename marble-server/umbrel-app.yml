@@ -21,20 +21,22 @@ environment:
     note: With invite, other devices' pubkeys (hex, comma separated) that may enroll a new account here.
 category: social
 name: Marble Server
-version: "0.12.2"
+version: "0.12.3"
 tagline: Your own always-on helper for the Marble app
 icon: https://raw.githubusercontent.com/sybenx/cosign-umbrel/main/assets/marble-tile.png
 description: >-
   Marble Server keeps one piece of your Marble account at home, so you don't have to rely
-  only on public servers.
+  only on public servers. Install the Marble app on your phone, open this server's page,
+  and scan "Add this server to your account" with Marble's Add a server.
 
 
-  Coming soon: add this server to your Marble account. Marble's Add a server will scan
-  a code on this server's page. Until then it runs and waits, and holds nothing.
+  It's private: only accounts you add with its code can use it, and its page is behind
+  your Umbrel login. Each code works once, on this server only, for an hour. Get the
+  Marble app at https://cosign.aaro.cc.
 
 
-  It's private: only accounts you invite can use it, and its page is behind your Umbrel
-  login. Get the Marble app at https://cosign.aaro.cc.
+  Marble can't take a server out of your account yet, so a server you add stays in it
+  until that comes.
 
 
   Your phone holds the bigger part of your account and this server a smaller one. They
@@ -43,7 +45,9 @@ description: >-
 
 
   Beta: the way Marble splits and moves your account hasn't had an outside review yet.
-releaseNotes: ""
+releaseNotes: >-
+  Add this server to your Marble account: its page shows a code that Marble's Add a
+  server scans. The page is rewritten to say what's running and who uses it.
 
 developer: sybenx
 website: https://cosign.aaro.cc
