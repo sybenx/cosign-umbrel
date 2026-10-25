@@ -38,10 +38,11 @@ It no longer creates a new account. When the Cosign server ships it:
 - map the app's settings to the join mode (default "only me"), and drop the raw
   COSIGN_ENROLL / COSIGN_INVITES settings for whatever the server takes;
 - add "or share it with people you follow" to the description;
-- remove COSIGN_PERSONAL=weighted (no new account from the page) if the server no
-  longer needs it;
 - retest on the Umbrel, then the phone test with the new flow, then screenshots;
 - then the official PR, still unopened.
 
-Until then, today's "Add your phone" makes a new account with only this server: test it
-only with a throwaway account.
+Until then the app makes no account of its own (`COSIGN_PERSONAL=0`): it runs and waits,
+holding nothing, and the listing says "Coming soon: add this server to your Marble
+account". The page shows the server's own status and an empty list. The test Umbrel
+installed before this change still has its own 1-server account from "Add your phone":
+use it only with a throwaway account.

@@ -14,9 +14,9 @@ services:
     cap_drop: [ALL]
     security_opt: [no-new-privileges:true]
     environment:
-      # Your own key on first start, made with your phone: phone 3 shares, this server 1,
-      # any 4 sign. Its page shows "Add your phone" until the phone pairs.
-      COSIGN_PERSONAL: weighted
+      # No account of its own: one made with your phone would have only this server. It
+      # waits until Marble can add it to your account (coming soon).
+      COSIGN_PERSONAL: "0"
       COSIGN_ENROLL: invite
       COSIGN_RELAYS: wss://syb.lol,wss://nos.lol,wss://relay.primal.net
     volumes:

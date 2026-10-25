@@ -13,12 +13,12 @@ needs no open port.
 
 1. In umbrelOS: App Store, ⋯ (top right), **Community App Stores**, add
    `https://github.com/sybenx/cosign-umbrel`.
-2. Install **Marble Server** and open it. On first start it has no key yet: scan **Add
-   your phone** with the Marble app, and your phone and the server make one together.
-3. Optional: in the app's settings, set `COSIGN_OPERATOR` to your npub, so the server
-   announces itself naming you. Then name it back from your key: a kind 10243 event with
-   a `p` tag for its host key (`"host"` on its `/status` page). See
-   [Make it count as yours](https://github.com/sybenx/cosign/tree/main/deploy#make-it-count-as-yours).
+2. Install **Marble Server**.
+
+**Coming soon: add this server to your Marble account.** Marble's *Add a server* will
+scan a code on the server's page. Until then the server runs and waits, and holds
+nothing: it doesn't make an account of its own, because an account with only this one
+server couldn't be recovered from its paper backup.
 
 ## Settings
 

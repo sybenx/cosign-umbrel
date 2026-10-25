@@ -26,8 +26,11 @@ tagline: Your own always-on helper for the Marble app
 icon: https://raw.githubusercontent.com/sybenx/cosign-umbrel/main/assets/marble-tile.png
 description: >-
   Marble Server keeps one piece of your Marble account at home, so you don't have to rely
-  only on public servers. Install the Marble app on your phone, then scan this server's
-  "Add your phone" code.
+  only on public servers.
+
+
+  Coming soon: add this server to your Marble account. Marble's Add a server will scan
+  a code on this server's page. Until then it runs and waits, and holds nothing.
 
 
   It's private: only accounts you invite can use it, and its page is behind your Umbrel
