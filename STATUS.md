@@ -26,3 +26,22 @@
 - Re-pin to 0.12.3 (new pair card wording, "Your server", the root page's Add your phone
   card, a new account after a restore), then take the screenshots.
 - The official package drops `icon:` and sets `submission:` to the PR's URL.
+
+## Next: the new join modes (waiting on the Cosign server)
+
+The agreed design. Marble Server serves **only me** (the default), **people I follow**
+(optionally follows-of-follows), **people I invite**, or **anyone**. Its main flow is
+"Add this server to your Marble account": Marble's Add a server scans the page's code.
+It no longer creates a new account. When the Cosign server ships it:
+
+- re-pin the image;
+- map the app's settings to the join mode (default "only me"), and drop the raw
+  COSIGN_ENROLL / COSIGN_INVITES settings for whatever the server takes;
+- add "or share it with people you follow" to the description;
+- remove COSIGN_PERSONAL=weighted (no new account from the page) if the server no
+  longer needs it;
+- retest on the Umbrel, then the phone test with the new flow, then screenshots;
+- then the official PR, still unopened.
+
+Until then, today's "Add your phone" makes a new account with only this server: test it
+only with a throwaway account.
