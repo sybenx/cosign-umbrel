@@ -3,13 +3,16 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: cosign-server_server_1
+      APP_HOST: marble-server_server_1
       APP_PORT: 8711
 
   server:
-    image: ghcr.io/sybenx/cosign-server:0.11.1@sha256:50fcec6d8db05fb81e0aff028695c9b35244c2f1c3090b8d2fbd163a1920727e
+    image: ghcr.io/sybenx/cosign-server:0.12.2@sha256:eb057185212034c5f29da4faf47435352db58b40bc8a87a78fd2eba785a7b5e7
     user: "1000:1000"
     restart: on-failure
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
     environment:
       # Your own key on first start, made with your phone: phone 3 shares, this server 1,
       # any 4 sign. Its page shows "Add your phone" until the phone pairs.

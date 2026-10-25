@@ -1,22 +1,22 @@
 # Status
 
-On hold (feature freeze, 24 Oct 2026). Nothing is published, and the sybenx/cosign-umbrel
-repo doesn't exist yet.
-
 ## Tested
 
-The YAML parses, nothing more. It hasn't been installed on an Umbrel.
+- The official Umbrel linter (`npm run lint:apps -- marble-server --check-images` in
+  getumbrel/umbrel-apps): 0 errors, 1 warning (security_opt: `no-new-privileges`, a
+  hardening option, to explain in the PR).
+- The compose run as umbrelOS would run it (minus Umbrel's own app_proxy), on the
+  published 0.12.2 image, read-only, against a local test relay: fresh start makes your
+  own key (weighted, phone + this server), `enroll: invite`, and the account's page
+  (`/g/<id>/`) shows "Add your phone" with its pairing code.
 
-## Needs 0.11.2
+## Not tested yet
 
-`COSIGN_PERSONAL=weighted` (your own key, made with your phone, and "Add your phone" on
-the page) exists only from 0.11.2. The compose is pinned to 0.11.1, which doesn't know it.
+- Installing it on a real Umbrel through this community store (planned on a test Umbrel).
+- A phone pairing with it, signing, a restart, and backups leaving out `data/a` and
+  `data/groups`.
 
-## To publish
+## Before the official submission
 
-1. Re-pin `cosign-server/docker-compose.yml` to `ghcr.io/sybenx/cosign-server:0.11.2@sha256:<index digest>`
-   (multi-arch index, check that both amd64 and arm64 are in it) and set `version: "0.11.2"` in umbrel-app.yml.
-2. Install it on a test Umbrel: settings show COSIGN_OPERATOR, COSIGN_ENROLL (invite),
-   COSIGN_INVITES; the page opens behind the Umbrel login and shows "Add your phone"; a
-   phone pairs and signs; a restart keeps it; `data/groups/*` is left out of backups.
-3. Rescan for home-network details, create the public repo sybenx/cosign-umbrel, push.
+- Screenshots, once the page says Marble (it still says "Open Cosign on your phone").
+- The official package drops `icon:` and sets `submission:` to the PR's URL.
