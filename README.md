@@ -1,8 +1,8 @@
-# Marble for Umbrel
+# Marble Server for Umbrel
 
-An Umbrel community app store with one app: **Marble Server**, your own always-on
-co-signer for your Nostr account. Marble is the app; the server and its protocol are
-[Cosign](https://github.com/sybenx/cosign).
+An Umbrel community app store with one app: **Marble Server**, your own always-on helper
+for the [Marble app](https://cosign.aaro.cc) on your phone. (Marble is the phone app; the
+server and its protocol are [Cosign](https://github.com/sybenx/cosign).)
 
 Marble keeps your key out of any one place: your phone holds 3 shares, each server 1,
 and it takes 4 to sign. A server you run yourself is the one the Marble app asks first,
