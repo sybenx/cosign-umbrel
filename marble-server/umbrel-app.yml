@@ -21,7 +21,7 @@ environment:
     note: With invite, other devices' pubkeys (hex, comma separated) that may enroll a new account here.
 category: social
 name: Marble Server
-version: "0.12.9"
+version: "0.12.10"
 tagline: Your own always-on helper for the Marble app
 icon: https://raw.githubusercontent.com/sybenx/cosign-umbrel/main/assets/marble-tile.png
 description: >-
@@ -46,12 +46,8 @@ description: >-
 
   Beta: the way Marble splits and moves your account hasn't had an outside review yet.
 releaseNotes: >-
-  Security fixes from six releases, none of which changes your account or what you need to
-  do. Most important: one server's word no longer makes something one of your devices, a
-  server only rebuilds share points from your key rather than trusting a list it was sent,
-  every piece of a decryption now carries a proof that it belongs to its share, a server
-  that missed a refresh says so instead of failing quietly, and a paper backup can no
-  longer promote itself to a device. Updating is recommended.
+  Far less network traffic: servers check on each other once a minute instead of every ten
+  seconds. Also a small security fix. Nothing changes for your account.
 
 developer: sybenx
 website: https://cosign.aaro.cc

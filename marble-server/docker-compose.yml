@@ -7,7 +7,7 @@ services:
       APP_PORT: 8711
 
   server:
-    image: ghcr.io/sybenx/cosign-server:0.12.9@sha256:11d5b7d225349ccf2c3fbeda1edb80a26d094036a92b90cb643880e36f11b887
+    image: ghcr.io/sybenx/cosign-server:0.12.10@sha256:7e276f6e6698d9f0b34245131b7abd7c51969aa0f62c3f0be53adf04893ced08
     user: "1000:1000"
     restart: on-failure
     read_only: true
